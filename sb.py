@@ -12,6 +12,9 @@ def save_to_json(data, filename="data.json"):
 if 'inventory' not in st.session_state:
     st.session_state.inventory = pd.DataFrame(columns=['Item', 'Quantity', 'Size (ft)', 'Original Quantity'])
 
+if 'inventory_list' not in st.session_state:
+    st.session_state.inventory_list = []
+
 def add_item(item_name, quantity, size):
     # Add new item to the inventory
     new_item = pd.DataFrame([[item_name, quantity, size, quantity]], columns=['Item', 'Quantity', 'Size (ft)', 'Original Quantity'])
