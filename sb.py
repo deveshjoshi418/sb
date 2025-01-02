@@ -41,6 +41,8 @@ df = pd.DataFrame({
 
 # Save data to JSON
 if st.button('Save Data to JSON'):
-    save_to_json(df.to_dict(), 'data.json')
+    save_to_json(st.session_state.inventory.to_dict(), 'data.json')
     st.success("Data saved to JSON!")
+
+
 
